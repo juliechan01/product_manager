@@ -16,6 +16,10 @@
   margin: 20px;
 }
 
+.block > button {
+  margin-left: 10px;
+}
+
 .product-name {
   padding: 10px;
 }

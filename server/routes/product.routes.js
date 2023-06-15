@@ -9,4 +9,10 @@ module.exports = app => {
 
     // ONE PRODUCT PAGE
     app.get('/api/products/:id', ProductController.findOne);
+
+    // UPDATE PRODUCT
+    app.patch('/api/products/:id', ProductController.updateProduct);
+
+    // DELETE PRODUCT
+    app.delete('/api/products/:id', ProductController.deleteProduct);
 }

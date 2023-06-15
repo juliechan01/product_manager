@@ -37,14 +37,14 @@ const CreateProduct = (props) => {
                     <div className='row mb-3'>
                         <label className='col-sm-2 col-form-label'> Name </label><br />
                         <div className='col-sm-10'>
-                            <input type="text" className="form-control" placeholder="Louis Vuitton handbag" onChange = {(e) => setName(e.target.value)}/>
+                            <input type="text" className="form-control" name='name' placeholder="Louis Vuitton handbag" onChange = {(e) => setName(e.target.value)}/>
                         </div>
                     </div>
 
                     <div className='row mb-3'>
                         <label className='col-sm-2 col-form-label'> Price </label><br />
                         <div className='col-sm-10'>
-                            <input type="number" className="form-control" placeholder="1500" onChange = {(e) => setPrice(e.target.value)}/>
+                            <input type="number" className="form-control" name='price' placeholder="1500" onChange = {(e) => setPrice(e.target.value)}/>
                         </div>
                     </div>
 

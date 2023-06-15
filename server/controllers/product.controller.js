@@ -32,6 +32,15 @@ module.exports.findOne = (req, res) => {
 }
 
 // UPDATE A PRODUCT
-
+module.exports.updateProduct = (req, res) => {
+    Product.findOneAndUpdate({ _id:req.params.id }, req.body, { new: true })
+        .then(updatedProduct => res.json(updatedProduct))
+        .catch(err => res.json(err))
+}
 
 // DELETE A PRODUCT
+module.exports.deleteProduct = (req, res) => {
+    Product.deleteOne({ _id:req.params.id })
+        .then(deleteConfirmation => res.json(deleteConfirmation))
+        .catch(err => res.json(err))
+}
