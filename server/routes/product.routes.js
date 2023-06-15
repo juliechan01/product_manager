@@ -5,4 +5,8 @@ module.exports = app => {
     app.post('/api/products', ProductController.createProduct);
 
     // ALL PRODUCTS PAGE
+    app.get('/api/products', ProductController.findAll);
+
+    // ONE PRODUCT PAGE
+    app.get('/api/products/:id', ProductController.findOne);
 }

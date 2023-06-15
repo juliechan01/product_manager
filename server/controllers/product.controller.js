@@ -1,9 +1,5 @@
 const Product = require('../models/product.model');
 
-module.exports.index = (req, res) => {
-    res.json
-}
-
 // CREATE A PRODUCT
 module.exports.createProduct = (req, res) => {
     Product.create(req.body)
@@ -19,15 +15,21 @@ module.exports.createProduct = (req, res) => {
 module.exports.findAll = (req, res) => {
     Product.find()
         .then(allProducts => {
-            res.json({ products: allProducts })
+            console.log(allProducts);
+            res.json(allProducts )
         })
         .catch ((err) => {
+            console.log(err)
             res.json({ msg: 'Failed to obtain all products from the database. Please try again later.', error: err })
         });
 }
 
 // READ ONE PRODUCT
-
+module.exports.findOne = (req, res) => {
+    Product.findOne({ _id: req.params.id })
+        .then(products => res.json(products))
+        .catch(err => res.json(err));
+}
 
 // UPDATE A PRODUCT
 
